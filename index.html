@@ -1,0 +1,40 @@
+
+   
+<html>
+    <head>
+      <title>WebGL2 Study!</title>
+      <style type="text/css">
+        canvas {
+          border: 2px solid black;
+        }
+      </style>
+      <script id="vertex-shader" type="x-shader/x-vertex">
+        #version 300 es
+        precision mediump float;
+    
+        // Supplied vertex position attribute
+        in vec3 aVertexPosition;
+    
+        void main(void) {
+          // Set the position in clipspace coordinates
+          gl_Position = vec4(aVertexPosition, 1.0);
+        }
+      </script>
+      <script id="fragment-shader" type="x-shader/x-fragment">
+        #version 300 es
+        precision mediump float;
+    
+        // Color that is the result of this shader
+        out vec4 fragColor;
+    
+        void main(void) {
+          // Set the result as red
+          fragColor = vec4(0.5, 0.5, 0.5, 1.0);
+        }
+      </script>
+      <script type="text/javascript" src="./webgl.js"></script>
+    </head>
+    <body>
+      <canvas id="webgl-canvas" width="800" height="600" />
+    </body>
+</html>
